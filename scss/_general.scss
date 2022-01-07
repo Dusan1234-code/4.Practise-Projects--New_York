@@ -1,0 +1,32 @@
+@import "vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: $colorFont;
+  font-family: $fontFamily;
+}
+
+.container {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.narandza {
+  background-color: $narandzasta;
+  color: white;
+}
+
+.siva {
+  background-color: $plava;
+  color: white;
+}

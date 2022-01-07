@@ -1,0 +1,226 @@
+@import "general.scss";
+@import "vars.scss";
+@import "mixin.scss";
+
+// ***********************
+// ****** HEADER ************
+// ***************************
+header {
+  color: white;
+  nav {
+    background-color: $colorHeading;
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+          display: inline-block;
+          padding: 2rem 4rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &:first-child {
+          background-color: $narandzasta;
+          padding-right: 15rem;
+          i {
+            margin-right: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+  // ***********************
+  // ****** HERO SECTION ************
+  // ***************************
+  .section-hero {
+    height: 50rem;
+    background-image: url("../slike/intro.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    .hero-text {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background-color: rgba(73, 73, 73, 0.4);
+      h1 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// ***********************
+// ****** MAIN ************
+// ***************************
+main {
+  // ***********************
+  // ****** SECTION BUY ************
+  // ***************************
+  .section-buy {
+    .buy-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 3rem;
+      padding: 2rem;
+      a {
+        border: 1px solid $colorFont;
+        text-decoration: none;
+        color: $colorFont;
+        border-radius: 20px;
+        padding: 1rem 2.4rem;
+        transition: background-color 0.4s;
+        &:hover {
+          background-color: $Svetlosiva1;
+          color: white;
+        }
+      }
+    }
+  }
+  // ***********************
+  // ****** SECTION RENT ************
+  // ***************************
+  .section-rent {
+    padding: 4rem;
+    background-color: $Svetlosiva2;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      row-gap: 2rem;
+      column-gap: 2rem;
+      .grid-item {
+        position: relative;
+        width: 100%;
+        img {
+          display: block;
+          width: 100%;
+          aspect-ratio: 1/1;
+        }
+        .overlay {
+          position: absolute;
+          font-size: 2rem;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 20%;
+          background-color: rgba(170, 170, 170, 0.6);
+          color: black;
+          opacity: 0;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  // ***********************
+  // ****** SECTION PRICING ************
+  // ***************************
+  .section-pricing {
+    padding: 3rem;
+    .pricing-text {
+      text-align: center;
+      h2 {
+        color: black;
+        margin-bottom: 2rem;
+      }
+    }
+    table {
+      margin-inline: auto;
+      margin-top: 2rem;
+      text-align: center;
+      border-collapse: separate;
+      td,
+      th {
+        border: 1px solid black;
+        padding: 1rem 4rem;
+      }
+      .empty {
+        empty-cells: hide;
+      }
+    }
+  }
+  // ***********************
+  // ****** SECTION CONTACT ************
+  // ***************************
+  .section-contact {
+    padding: 4rem;
+    background-color: $Svetlosiva2;
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: $colorHeading;
+    }
+    .flex {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      iframe {
+        width: 35rem;
+        height: 35rem;
+      }
+      form {
+        padding: 3rem;
+        background-color: $narandzasta;
+        width: 95%;
+        .block {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1rem;
+          row-gap: 2rem;
+          align-items: center;
+          width: 100%;
+          input,
+          select,
+          textarea {
+            padding: 0.7rem;
+          }
+          input,
+          select {
+            height: 4rem;
+          }
+          &:first-child select {
+            width: 40%;
+          }
+          &:first-child input {
+            width: 100%;
+          }
+          textarea,
+          input[type="email"] {
+            grid-column: 1/4;
+            margin-top: 2rem;
+          }
+          textarea {
+            height: 8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ***********************
+// ****** FOOTER ************
+// ***************************
+footer {
+  background-color: $colorHeading;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  span {
+    color: $narandzasta;
+  }
+}
