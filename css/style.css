@@ -40,11 +40,19 @@ header nav ul {
   list-style: none;
   align-items: center;
 }
+header nav ul li:first-child a {
+  text-decoration: underline;
+}
 header nav ul li a {
   text-decoration: none;
   color: white;
   display: inline-block;
   padding: 2rem 4rem;
+}
+@media (max-width: 1000px) {
+  header nav ul li a {
+    pointer-events: none;
+  }
 }
 header nav ul li a:hover {
   text-decoration: underline;
@@ -94,6 +102,11 @@ main .section-buy .buy-btn a {
   padding: 1rem 2.4rem;
   transition: background-color 0.4s;
 }
+@media (max-width: 1000px) {
+  main .section-buy .buy-btn a {
+    pointer-events: none;
+  }
+}
 main .section-buy .buy-btn a:hover {
   background-color: #cfd1d3;
   color: white;
@@ -108,6 +121,13 @@ main .section-rent .grid {
   align-items: center;
   row-gap: 2rem;
   column-gap: 2rem;
+}
+@media (max-width: 1000px) {
+  main .section-rent .grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
 }
 main .section-rent .grid .grid-item {
   position: relative;
@@ -128,6 +148,11 @@ main .section-rent .grid .grid-item .overlay {
   background-color: rgba(170, 170, 170, 0.6);
   color: black;
   opacity: 0;
+}
+@media (max-width: 1000px) {
+  main .section-rent .grid .grid-item .overlay {
+    pointer-events: none;
+  }
 }
 main .section-rent .grid .grid-item .overlay:hover {
   opacity: 1;
@@ -171,6 +196,11 @@ main .section-contact .flex {
   gap: 3rem;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  main .section-contact .flex {
+    flex-direction: column;
+  }
+}
 main .section-contact .flex iframe {
   width: 35rem;
   height: 35rem;
@@ -179,6 +209,11 @@ main .section-contact .flex form {
   padding: 3rem;
   background-color: #f75311;
   width: 95%;
+}
+@media (max-width: 1000px) {
+  main .section-contact .flex form {
+    width: 80%;
+  }
 }
 main .section-contact .flex form .block {
   display: grid;
