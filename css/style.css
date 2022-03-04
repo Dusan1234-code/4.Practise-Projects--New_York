@@ -40,6 +40,14 @@ header nav ul {
   list-style: none;
   align-items: center;
 }
+@media (max-width: 660px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    width: 100%;
+  }
+}
 header nav ul li:first-child a {
   text-decoration: underline;
 }
@@ -59,7 +67,13 @@ header nav ul li a:hover {
 }
 header nav ul li:first-child {
   background-color: #f75311;
-  padding-right: 15rem;
+  max-width: 40%;
+}
+@media (max-width: 660px) {
+  header nav ul li:first-child {
+    max-width: 100%;
+    text-align: left;
+  }
 }
 header nav ul li:first-child i {
   margin-right: 0.8rem;
@@ -72,6 +86,13 @@ header .section-hero {
   background-repeat: no-repeat;
   position: relative;
 }
+@media (max-width: 660px) {
+  header .section-hero {
+    background-image: none;
+    height: 30rem;
+    background-color: black;
+  }
+}
 header .section-hero .hero-text {
   position: absolute;
   top: 75%;
@@ -80,11 +101,23 @@ header .section-hero .hero-text {
   text-align: center;
   background-color: rgba(73, 73, 73, 0.4);
 }
+@media (max-width: 660px) {
+  header .section-hero .hero-text {
+    top: 50%;
+    background-color: black;
+  }
+}
 header .section-hero .hero-text h1 {
   font-size: 4rem;
 }
+@media (max-width: 660px) {
+  header .section-hero .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
 header .section-hero .hero-text p {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 main .section-buy .buy-btn {
@@ -93,6 +126,11 @@ main .section-buy .buy-btn {
   justify-content: flex-end;
   gap: 3rem;
   padding: 2rem;
+}
+@media (max-width: 660px) {
+  main .section-buy .buy-btn {
+    justify-content: center;
+  }
 }
 main .section-buy .buy-btn a {
   border: 1px solid #797979;
@@ -105,6 +143,12 @@ main .section-buy .buy-btn a {
 @media (max-width: 1000px) {
   main .section-buy .buy-btn a {
     pointer-events: none;
+  }
+}
+@media (max-width: 660px) {
+  main .section-buy .buy-btn a {
+    padding: 0.6rem 1.8rem;
+    font-size: 1.3rem;
   }
 }
 main .section-buy .buy-btn a:hover {
@@ -129,6 +173,12 @@ main .section-rent .grid {
     row-gap: 3rem;
   }
 }
+@media (max-width: 660px) {
+  main .section-rent .grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}
 main .section-rent .grid .grid-item {
   position: relative;
   width: 100%;
@@ -137,6 +187,18 @@ main .section-rent .grid .grid-item img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
+}
+@media (max-width: 1000px) {
+  main .section-rent .grid .grid-item img {
+    width: 80%;
+  }
+}
+@media (max-width: 660px) {
+  main .section-rent .grid .grid-item img {
+    height: 30rem;
+    width: 60%;
+    margin-inline: auto;
+  }
 }
 main .section-rent .grid .grid-item .overlay {
   position: absolute;
@@ -173,6 +235,11 @@ main .section-pricing table {
   text-align: center;
   border-collapse: separate;
 }
+@media (max-width: 660px) {
+  main .section-pricing table {
+    display: none;
+  }
+}
 main .section-pricing table td,
 main .section-pricing table th {
   border: 1px solid black;
@@ -180,6 +247,25 @@ main .section-pricing table th {
 }
 main .section-pricing table .empty {
   empty-cells: hide;
+}
+main .section-pricing .table-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+@media (max-width: 660px) {
+  main .section-pricing .table-button {
+    opacity: 1;
+    margin-top: 2rem;
+  }
+}
+main .section-pricing .table-button a {
+  text-decoration: none;
+  color: #797979;
+  border: 1px solid #797979;
+  border-radius: 20px;
+  padding: 1rem 2.4rem;
 }
 main .section-contact {
   padding: 4rem;
@@ -223,6 +309,12 @@ main .section-contact .flex form .block {
   align-items: center;
   width: 100%;
 }
+@media (max-width: 660px) {
+  main .section-contact .flex form .block {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
 main .section-contact .flex form .block input,
 main .section-contact .flex form .block select,
 main .section-contact .flex form .block textarea {
@@ -235,6 +327,16 @@ main .section-contact .flex form .block select {
 main .section-contact .flex form .block:first-child select {
   width: 40%;
 }
+@media (max-width: 1000px) {
+  main .section-contact .flex form .block:first-child select {
+    width: 50%;
+  }
+}
+@media (max-width: 660px) {
+  main .section-contact .flex form .block:first-child select {
+    width: 100%;
+  }
+}
 main .section-contact .flex form .block:first-child input {
   width: 100%;
 }
@@ -242,6 +344,12 @@ main .section-contact .flex form .block textarea,
 main .section-contact .flex form .block input[type=email] {
   grid-column: 1/4;
   margin-top: 2rem;
+}
+@media (max-width: 660px) {
+  main .section-contact .flex form .block textarea,
+main .section-contact .flex form .block input[type=email] {
+    grid-column: 1;
+  }
 }
 main .section-contact .flex form .block textarea {
   height: 8rem;

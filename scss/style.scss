@@ -7,12 +7,20 @@
 // ***************************
 header {
   color: white;
+
   nav {
     background-color: $colorHeading;
+
     ul {
       display: flex;
       list-style: none;
       align-items: center;
+      @include mobile {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        width: 100%;
+      }
       li {
         &:first-child a {
           text-decoration: underline;
@@ -32,7 +40,11 @@ header {
         }
         &:first-child {
           background-color: $narandzasta;
-          padding-right: 15rem;
+          max-width: 40%;
+          @include mobile {
+            max-width: 100%;
+            text-align: left;
+          }
           i {
             margin-right: 0.8rem;
           }
@@ -50,6 +62,11 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
+    @include mobile {
+      background-image: none;
+      height: 30rem;
+      background-color: black;
+    }
     .hero-text {
       position: absolute;
       top: 75%;
@@ -57,11 +74,19 @@ header {
       transform: translate(-50%, -50%);
       text-align: center;
       background-color: rgba(73, 73, 73, 0.4);
+      @include mobile {
+        top: 50%;
+        background-color: black;
+      }
       h1 {
         font-size: 4rem;
+        @include mobile {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
       }
       p {
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
     }
   }
@@ -81,6 +106,9 @@ main {
       justify-content: flex-end;
       gap: 3rem;
       padding: 2rem;
+      @include mobile {
+        justify-content: center;
+      }
       a {
         border: 1px solid $colorFont;
         text-decoration: none;
@@ -90,6 +118,10 @@ main {
         transition: background-color 0.4s;
         @include tablet {
           pointer-events: none;
+        }
+        @include mobile {
+          padding: 0.6rem 1.8rem;
+          font-size: 1.3rem;
         }
         &:hover {
           background-color: $Svetlosiva1;
@@ -115,6 +147,10 @@ main {
         column-gap: 3rem;
         row-gap: 3rem;
       }
+      @include mobile {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+      }
       .grid-item {
         position: relative;
         width: 100%;
@@ -122,6 +158,14 @@ main {
           display: block;
           width: 100%;
           aspect-ratio: 1/1;
+          @include tablet {
+            width: 80%;
+          }
+          @include mobile {
+            height: 30rem;
+            width: 60%;
+            margin-inline: auto;
+          }
         }
         .overlay {
           position: absolute;
@@ -160,6 +204,9 @@ main {
       margin-top: 2rem;
       text-align: center;
       border-collapse: separate;
+      @include mobile {
+        display: none;
+      }
       td,
       th {
         border: 1px solid black;
@@ -167,6 +214,23 @@ main {
       }
       .empty {
         empty-cells: hide;
+      }
+    }
+    .table-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      @include mobile {
+        opacity: 1;
+        margin-top: 2rem;
+      }
+      a {
+        text-decoration: none;
+        color: $colorFont;
+        border: 1px solid $colorFont;
+        border-radius: 20px;
+        padding: 1rem 2.4rem;
       }
     }
   }
@@ -207,6 +271,10 @@ main {
           row-gap: 2rem;
           align-items: center;
           width: 100%;
+          @include mobile {
+            grid-template-columns: 1fr;
+            justify-content: center;
+          }
           input,
           select,
           textarea {
@@ -218,6 +286,12 @@ main {
           }
           &:first-child select {
             width: 40%;
+            @include tablet {
+              width: 50%;
+            }
+            @include mobile {
+              width: 100%;
+            }
           }
           &:first-child input {
             width: 100%;
@@ -226,6 +300,9 @@ main {
           input[type="email"] {
             grid-column: 1/4;
             margin-top: 2rem;
+            @include mobile {
+              grid-column: 1;
+            }
           }
           textarea {
             height: 8rem;
